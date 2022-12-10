@@ -17,6 +17,12 @@ export default [
         title: 'eCommerce',
         icon: <ShoppingCart />,
         navLink: '/dashboard/ecommerce'
+      },
+      {
+        id: 'contactsDash',
+        title: 'contacts',
+        icon: <ShoppingCart />,
+        navLink: '/dashboard/contacts'
       }
     ]
   }

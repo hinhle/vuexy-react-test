@@ -9,6 +9,7 @@ import messagesEn from '@assets/data/locales/en.json'
 import messagesDe from '@assets/data/locales/de.json'
 import messagesFr from '@assets/data/locales/fr.json'
 import messagesPt from '@assets/data/locales/pt.json'
+import messagesVn from '@assets/data/locales/vn.json'
 
 // ** User Language Data
 import userMessagesEn from '@src/assets/data/locales/en.json'
@@ -21,7 +22,8 @@ const menuMessages = {
   en: { ...messagesEn, ...userMessagesEn },
   de: { ...messagesDe, ...userMessagesDe },
   fr: { ...messagesFr, ...userMessagesFr },
-  pt: { ...messagesPt, ...userMessagesPt }
+  pt: { ...messagesPt, ...userMessagesPt },
+  vi: { ...messagesVn }
 }
 
 // ** Create Context

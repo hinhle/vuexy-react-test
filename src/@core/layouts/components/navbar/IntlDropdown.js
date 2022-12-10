@@ -7,6 +7,9 @@ import { UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from
 
 // ** Internationalization Context
 import { IntlContext } from '@src/utility/context/Internationalization'
+import moment from 'moment'
+import 'moment/locale/vi';
+import 'moment/locale/en-ca';
 
 const IntlDropdown = () => {
   // ** Context
@@ -17,13 +20,19 @@ const IntlDropdown = () => {
     en: 'English',
     de: 'German',
     fr: 'French',
-    pt: 'Portuguese'
+    pt: 'Portuguese',
+    vi: 'Vietnamese'
   }
 
   // ** Function to switch Language
   const handleLangUpdate = (e, lang) => {
     e.preventDefault()
     intlContext.switchLanguage(lang)
+    if (lang === 'vi') {
+      moment.locale('vi')
+    } else {
+      moment.locale('en-ca')
+    }
   }
 
   return (
@@ -31,7 +40,7 @@ const IntlDropdown = () => {
       <DropdownToggle href='/' tag='a' className='nav-link' onClick={e => e.preventDefault()}>
         <ReactCountryFlag
           className='country-flag flag-icon'
-          countryCode={intlContext.locale === 'en' ? 'us' : intlContext.locale}
+          countryCode={intlContext.locale === 'en' ? 'us' : intlContext.locale === 'vi' ? 'vn' : intlContext.locale}
           svg
         />
         <span className='selected-language'>{langObj[intlContext.locale]}</span>
@@ -40,6 +49,10 @@ const IntlDropdown = () => {
         <DropdownItem href='/' tag='a' onClick={e => handleLangUpdate(e, 'en')}>
           <ReactCountryFlag className='country-flag' countryCode='us' svg />
           <span className='ml-1'>English</span>
+        </DropdownItem>
+        <DropdownItem href='/' tag='a' onClick={e => handleLangUpdate(e, 'vi')}>
+          <ReactCountryFlag className='country-flag' countryCode='vn' svg />
+          <span className='ml-1'>Vietnamese</span>
         </DropdownItem>
         <DropdownItem href='/' tag='a' onClick={e => handleLangUpdate(e, 'fr')}>
           <ReactCountryFlag className='country-flag' countryCode='fr' svg />
