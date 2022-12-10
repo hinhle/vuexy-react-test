@@ -10,6 +10,11 @@ const DashboardRoutes = [
     path: '/dashboard/ecommerce',
     component: lazy(() => import('../../views/dashboard/ecommerce')),
     exact: true
+  },
+  {
+    path: '/dashboard/contacts',
+    component: lazy(() => import('../../views/dashboard/contacts')),
+    exact: true
   }
 ]
 
