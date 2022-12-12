@@ -25,7 +25,6 @@ const FilterSidebarLeft = (props) => {
   const intl = useIntl();
   const t = intl.formatMessage;
   const locale = intl.locale;
-  console.log(intl);
   // ** Props
   const { toggleSidebar } = props;
 
